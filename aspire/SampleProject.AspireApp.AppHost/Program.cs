@@ -37,7 +37,7 @@ paymentServiceApi
        .WithReference(rabbitmq)
        .WithReference(orderServiceApi);
 orderServiceApi
-        .WaitFor(cache)
+       .WaitFor(cache)
        .WithReference(cache)
        .WaitFor(rabbitmq)
        .WithReference(rabbitmq)

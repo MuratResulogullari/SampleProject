@@ -13,7 +13,7 @@ namespace SampleProject.CatalogService.API
      
       builder.AddNpgsqlDbContext<CatalogDbContext>("CatalogDB", null,
       optionsBuilder => optionsBuilder.UseNpgsql(npgsqlBuilder => npgsqlBuilder.MigrationsAssembly(typeof(Program).Assembly.GetName().Name)));
-
+      
       builder.Services.AddMigration<CatalogDbContext, CatalogContextSeed>();
 
       builder.Services.Configure<CatalogOptions>(builder.Configuration.GetSection(nameof(CatalogOptions)));
